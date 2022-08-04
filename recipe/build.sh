@@ -23,7 +23,4 @@ fi
 
 cd build
 ninja
-if [[ -z "$MACOSX_DEPLOYMENT_TARGET" ]]; then
-    ninja test
-fi
 ninja install
