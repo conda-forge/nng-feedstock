@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/nanomsg/nng/archive/v{{ version }}.tar.gz
-  sha256: 0f8f2ede7f5ea2018c7fa615c76f48662eb06d39c71c3339f8ff38da44470855
+  sha256: e0af76aff291c670d091a07a4e71febf7b7a254f1ab5939f9464ccbd8f8aa2ba
 
 build:
   number: 0
