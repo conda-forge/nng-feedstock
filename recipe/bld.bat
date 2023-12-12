@@ -4,7 +4,6 @@ if errorlevel 1 exit 1
 
 :: Configure 
 cmake -G "Ninja" -B "build" -S . ^
-         -DNNG_ENABLE_TLS=ON ^
          -DCMAKE_BUILD_TYPE=Release ^
          -DCMAKE_PREFIX_PATH=%LIBRARY_PREFIX% ^
          -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
