@@ -22,7 +22,7 @@ requirements:
     - make
     - ninja
   host:
-    - mbedtls
+    - mbedtls  # [not win]
   run:
     - ucrt  # [win]
 
