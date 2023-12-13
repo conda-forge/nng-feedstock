@@ -25,7 +25,7 @@ requirements:
     - mbedtls  # [not win]
   run:
     - ucrt  # [win]
-    - mbedtls #[not win]
+    - mbedtls  # [not win]
 
 test:
   commands:
