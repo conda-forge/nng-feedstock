@@ -29,7 +29,8 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libnng.so  # [unix]
+    - test -f $PREFIX/lib/libnng.so  # [linux]
+    - test -f $PREFIX/lib/libnng.dylib  # [osx]
 
 about:
   home: https://nng.nanomsg.org/
