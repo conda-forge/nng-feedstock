@@ -31,6 +31,8 @@ test:
   commands:
     - test -f $PREFIX/lib/libnng.so  # [linux]
     - test -f $PREFIX/lib/libnng.dylib  # [osx]
+    - nngcat -V  # [unix]
+    - nngcat.exe -V  # [win]
 
 about:
   home: https://nng.nanomsg.org/
