@@ -5,6 +5,7 @@ if [[ "$target_platform" == osx-arm64 ]]; then
 	cmake -B build -S . \
 		${CMAKE_ARGS} \
                 -G Ninja \
+                -DBUILD_SHARED_LIBS=ON \
                 -DNNG_ENABLE_TLS=ON \
 		-DCMAKE_INSTALL_PREFIX=$PREFIX \
 		-DCMAKE_INSTALL_LIBDIR=lib \
@@ -16,6 +17,7 @@ else
 	cmake -B build -S . \
 		${CMAKE_ARGS} \
                 -G Ninja \
+                -DBUILD_SHARED_LIBS=ON \
                 -DNNG_ENABLE_TLS=ON \
 		-DCMAKE_INSTALL_PREFIX=$PREFIX \
 		-DCMAKE_INSTALL_LIBDIR=lib \
