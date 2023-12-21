@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "TARGET_PLATTFORM {$target_platform}"
+echo "TARGET_PLATTFORM $target_platform"
+
 mkdir build
 
 if [[ "$target_platform" == osx-arm64 ]]; then
