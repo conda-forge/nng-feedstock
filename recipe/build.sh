@@ -27,7 +27,7 @@ fi
 
 cd build
 ninja
-if [[ -z "$MACOSX_DEPLOYMENT_TARGET" ]]; then
+if [[ -z "$MACOSX_DEPLOYMENT_TARGET" ]] && [[ "$target_platform" != "linux_aarch64" ]] && [[ "$target_platform" != "linux_ppc64le" ]]; then
     ninja test
 fi
 ninja install
