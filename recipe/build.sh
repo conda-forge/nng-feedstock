@@ -1,7 +1,4 @@
 #!/bin/bash
-echo "TARGET_PLATTFORM {$target_platform}"
-echo "TARGET_PLATTFORM $target_platform"
-
 mkdir build
 
 if [[ "$target_platform" == osx-arm64 ]]; then
@@ -30,7 +27,7 @@ fi
 
 cd build
 ninja
-if [[ -z "$MACOSX_DEPLOYMENT_TARGET" ]] && [[ "{$target_platform}" != "linux_aarch64" ]] && [[ "{$target_platform}" != "linux_ppc64le" ]]; then
+if [[ -z "$MACOSX_DEPLOYMENT_TARGET" ]] && [[ "$target_platform" != "linux-aarch64" ]] && [[ "$target_platform" != "linux-ppc64le" ]]; then
     ninja test
 fi
 ninja install
