@@ -12,7 +12,7 @@ if [[ "$target_platform" == osx-arm64 ]]; then
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DENABLE_TESTING=OFF \
-  		-DNNG_TOOLS=ON
+		-DNNG_TOOLS=ON
 
 else
 	cmake -B build -S . \
