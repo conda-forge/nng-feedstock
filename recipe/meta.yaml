@@ -22,10 +22,10 @@ requirements:
     - make
     - ninja
   host:
-    - mbedtls  # [not win]
+    - mbedtls =3.5
   run:
     - ucrt  # [win]
-    - mbedtls  # [not win]
+    - mbedtls  =3.5
 
 test:
   commands:
