@@ -22,10 +22,10 @@ requirements:
     - make
     - ninja
   host:
-    - mbedtls =3.5
+    - mbedtls >=3.5
   run:
     - ucrt  # [win]
-    - {{ pin_compatible('mbedtls', max_pin='x.x.x') }}
+    - {{ pin_compatible('mbedtls', max_pin='x.x') }}
 
 test:
   commands:
