@@ -25,7 +25,7 @@ requirements:
     - mbedtls =3.5
   run:
     - ucrt  # [win]
-    - mbedtls  =3.5
+    - {{ pin_compatible('mbedtls', max_pin='x.x.x') }}
 
 test:
   commands:
