@@ -12,7 +12,7 @@ source:
     - test.patch  # [linux]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -22,10 +22,10 @@ requirements:
     - make
     - ninja
   host:
-    - mbedtls  # [not win]
+    - mbedtls >=3.5
   run:
     - ucrt  # [win]
-    - mbedtls  # [not win]
+    - {{ pin_compatible('mbedtls', max_pin='x.x') }}
 
 test:
   commands:
