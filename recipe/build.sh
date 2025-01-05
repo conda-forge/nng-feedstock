@@ -12,7 +12,8 @@ if [[ "$target_platform" == osx-arm64 ]]; then
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-DENABLE_TESTING=OFF \
-		-DNNG_TOOLS=ON
+		-DNNG_TOOLS=ON \
+  		-DNNG_ENABLE_IPV6=ON
 
 else
 	cmake -B build -S . \
@@ -24,7 +25,8 @@ else
 		-DCMAKE_INSTALL_LIBDIR=lib \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_VERBOSE_MAKEFILE=ON \
-  		-DNNG_TOOLS=ON
+  		-DNNG_TOOLS=ON \
+    		-DNNG_ENABLE_IPV6=ON
 fi
 
 cd build
