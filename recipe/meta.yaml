@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/nanomsg/nng/archive/v{{ version }}.tar.gz
   sha256: a05936a64851809ea4b6d4d96d80f2a1b815ef14d6c4f6dd2c8716bd38dd1822
+  patches:
+    - test.patch  # [linux]
 
 build:
   number: 0
