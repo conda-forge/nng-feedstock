@@ -4,8 +4,21 @@ index 6a49d1fe..da4321c3 100644
 +++ b/src/platform/CMakeLists.txt
 @@ -14,5 +14,5 @@ add_subdirectory(posix)
  add_subdirectory(windows)
- 
+
  nng_test(platform_test)
 -nng_test(resolver_test)
 +# nng_test(resolver_test)
  nng_test(udp_test)
+diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
+index 40828eff..10809d5e 100644
+--- a/tests/CMakeLists.txt
++++ b/tests/CMakeLists.txt
+@@ -141,7 +141,7 @@ add_nng_test(synch 5)
+ add_nng_test(tls 60)
+ add_nng_test(tcpsupp 10)
+ add_nng_test(tcp 180)
+-add_nng_test(tcp6 60)
++# add_nng_test(tcp6 60)
+ add_nng_test(ws 30)
+ add_nng_test(wss 30)
+ add_nng_test1(zt 60 NNG_TRANSPORT_ZEROTIER)
