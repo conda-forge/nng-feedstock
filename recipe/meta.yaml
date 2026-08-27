@@ -1,5 +1,5 @@
 {% set name = "nng" %}
-{% set version = "1.11" %}
+{% set version = "1.12.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/nanomsg/nng/archive/v{{ version }}.tar.gz
-  sha256: 12aaff6f8f183ba0fec378af8620c47cf4be6da975d016ec6cdec2fbac0d3534
+  sha256: 036a925790034efdeef8a6803f3e4402c3ab509383326f8bc2f15ecee75a2fa2
   patches:
     - test.patch  # [linux]
 
