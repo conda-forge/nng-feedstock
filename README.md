@@ -15,7 +15,6 @@ Documentation: https://nng.nanomsg.org/man/
 
 nanomsg-next-generation -- light-weight brokerless messaging
 
-
 Current build status
 ====================
 
