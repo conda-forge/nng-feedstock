@@ -1,0 +1,60 @@
+schema_version: 1
+
+context:
+  name: nng
+  version: "1.12.4"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/nanomsg/nng/archive/v${{ version }}.tar.gz
+  sha256: 93b177727ec5ea38af5c88ab297f732ef71ddc4700d2407c4f9c999b3a7310a0
+  patches:
+    - if: linux
+      then: test.patch
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - cmake
+    - make
+    - ninja
+  host:
+    - mbedtls >=3.5,<4
+  run:
+    - if: win
+      then: ucrt
+    - ${{ pin_compatible('mbedtls', upper_bound='x.x') }}
+
+tests:
+  - script:
+      - if: linux
+        then: test -f $PREFIX/lib/libnng.so
+      - if: osx
+        then: test -f $PREFIX/lib/libnng.dylib
+      - if: unix
+        then: nngcat -V
+      - if: win
+        then: nngcat.exe -V
+
+about:
+  summary: nanomsg-next-generation -- light-weight brokerless messaging
+  description: |
+    nanomsg-next-generation -- light-weight brokerless messaging
+  license: MIT
+  license_file: LICENSE.txt
+  homepage: https://nng.nanomsg.org/
+  repository: https://github.com/nanomsg/nng
+  documentation: https://nng.nanomsg.org/man/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
+    - carlodri
