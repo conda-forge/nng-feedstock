@@ -16,7 +16,7 @@ source:
       then: test.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -43,6 +43,19 @@ tests:
         then: nngcat -V
       - if: win
         then: nngcat.exe -V
+  # nng_tls_config_alloc() returns NNG_ENOTSUP if nng was built without TLS
+  - script:
+      - if: win
+        then:
+          - cl /nologo /I%LIBRARY_INC% test_tls.c /link /LIBPATH:%LIBRARY_LIB% nng.lib
+          - test_tls.exe
+    requirements:
+      build:
+        - if: win
+          then: ${{ compiler('c') }}
+    files:
+      recipe:
+        - test_tls.c
 
 about:
   summary: nanomsg-next-generation -- light-weight brokerless messaging
