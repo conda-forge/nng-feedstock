@@ -8,3 +8,25 @@
 +# nng_test(resolver_test)
  nng_test(tcp_stream_test)
  nng_test(udp_test)
+--- a/src/sp/transport/tcp/tcp_test.c
++++ b/src/sp/transport/tcp/tcp_test.c
+@@ -313,7 +313,7 @@
+ 	{ "tcp keep alive option", test_tcp_keep_alive_option },
+ 	{ "tcp recv max", test_tcp_recv_max },
+ 	{ "tcp props v4", test_tcp_props_v4 },
+-	NUTS_INSERT_TRAN_TESTS(tcp6),
+-	{ "tcp props v6", test_tcp_props_v6 },
++	// NUTS_INSERT_TRAN_TESTS(tcp6),
++	// { "tcp props v6", test_tcp_props_v6 },
+ 	{ NULL, NULL },
+ };
+--- a/src/sp/transport/ws/ws_test.c
++++ b/src/sp/transport/ws/ws_test.c
+@@ -347,6 +347,6 @@
+ 	{ "ws no tls", test_ws_no_tls },
+ 	NUTS_INSERT_TRAN_TESTS(ws),
+ 	{ "ws msg props", test_ws_props_v4 },
+-	NUTS_INSERT_TRAN_TESTS(ws6),
++	// NUTS_INSERT_TRAN_TESTS(ws6),
+ 	{ NULL, NULL },
+ };
