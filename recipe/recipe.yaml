@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: nng
-  version: "1.12.4"
+  version: "2.0.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,15 +10,17 @@ package:
 
 source:
   url: https://github.com/nanomsg/nng/archive/v${{ version }}.tar.gz
-  sha256: 93b177727ec5ea38af5c88ab297f732ef71ddc4700d2407c4f9c999b3a7310a0
+  sha256: 439241ca7afd059e2c5635491e430e37b591430c25aa57c0ba07995c3fbdffa6
   patches:
     - if: linux
       then: test.patch
 
 build:
-  number: 1
+  number: 0
 
 requirements:
+  run_exports:
+    - ${{ pin_subpackage(name, upper_bound='x') }}
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
@@ -27,7 +29,7 @@ requirements:
     - make
     - ninja
   host:
-    - mbedtls >=3.5,<4
+    - mbedtls >=3.6,<4
   run:
     - if: win
       then: ucrt
