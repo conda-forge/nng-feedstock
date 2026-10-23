@@ -19,6 +19,8 @@ build:
   number: 0
 
 requirements:
+  run_exports:
+    - ${{ pin_subpackage(name, upper_bound='x') }}
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
@@ -27,7 +29,7 @@ requirements:
     - make
     - ninja
   host:
-    - mbedtls >=3.5,<4
+    - mbedtls >=3.6,<4
   run:
     - if: win
       then: ucrt
