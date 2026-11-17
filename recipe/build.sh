@@ -7,6 +7,7 @@ if [[ "$target_platform" == osx-arm64 ]]; then
                 -G Ninja \
                 -DBUILD_SHARED_LIBS=ON \
                 -DNNG_ENABLE_TLS=ON \
+                -DCMAKE_POLICY_DEFAULT_CMP0125=NEW \
 		-DCMAKE_INSTALL_PREFIX=$PREFIX \
 		-DCMAKE_INSTALL_LIBDIR=lib \
 		-DCMAKE_BUILD_TYPE=Release \
@@ -20,6 +21,7 @@ else
                 -G Ninja \
                 -DBUILD_SHARED_LIBS=ON \
                 -DNNG_ENABLE_TLS=ON \
+                -DCMAKE_POLICY_DEFAULT_CMP0125=NEW \
 		-DCMAKE_INSTALL_PREFIX=$PREFIX \
 		-DCMAKE_INSTALL_LIBDIR=lib \
 		-DCMAKE_BUILD_TYPE=Release \

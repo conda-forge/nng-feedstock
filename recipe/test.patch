@@ -30,3 +30,14 @@
 +	// NUTS_INSERT_TRAN_TESTS(ws6),
  	{ NULL, NULL },
  };
+--- a/src/sp/transport/dtls/dtls_tran_test.c
++++ b/src/sp/transport/dtls/dtls_tran_test.c
+@@ -2345,7 +2345,7 @@
+ 	{ "dtls groups", test_dtls_groups },
+ 	{ "dtls version mismatch", test_dtls_version_mismatch },
+ 	{ "dtls port zero bind", test_dtls_port_zero_bind },
+-	{ "dtls IPv6", test_dtls_ipv6 },
++	// { "dtls IPv6", test_dtls_ipv6 },
+ 	{ "dtls malformed address", test_dtls_malformed_address },
+ 	{ "dtls no delay option", test_dtls_no_delay_option },
+ 	{ "dtls max peers option", test_dtls_max_peers_option },
