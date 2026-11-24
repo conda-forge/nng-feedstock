@@ -31,7 +31,8 @@ requirements:
   host:
     - mbedtls >=4.2
   run:
-    - if: win
+    # ucrt is only packaged for win-64; vc14_runtime covers win-arm64
+    - if: win and x86_64
       then: ucrt
     - ${{ pin_compatible('mbedtls', upper_bound='x.x') }}
 
