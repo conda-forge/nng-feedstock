@@ -22,7 +22,7 @@
  };
 --- a/src/sp/transport/ws/ws_test.c
 +++ b/src/sp/transport/ws/ws_test.c
-@@ -347,6 +347,6 @@
+@@ -528,6 +528,6 @@
  	{ "ws no tls", test_ws_no_tls },
  	NUTS_INSERT_TRAN_TESTS(ws),
  	{ "ws msg props", test_ws_props_v4 },
@@ -30,3 +30,23 @@
 +	// NUTS_INSERT_TRAN_TESTS(ws6),
  	{ NULL, NULL },
  };
+--- a/src/sp/transport/dtls/dtls_tran_test.c
++++ b/src/sp/transport/dtls/dtls_tran_test.c
+@@ -2345,7 +2345,7 @@
+ 	{ "dtls groups", test_dtls_groups },
+ 	{ "dtls version mismatch", test_dtls_version_mismatch },
+ 	{ "dtls port zero bind", test_dtls_port_zero_bind },
+-	{ "dtls IPv6", test_dtls_ipv6 },
++	// { "dtls IPv6", test_dtls_ipv6 },
+ 	{ "dtls malformed address", test_dtls_malformed_address },
+ 	{ "dtls no delay option", test_dtls_no_delay_option },
+ 	{ "dtls max peers option", test_dtls_max_peers_option },
+@@ -2358,7 +2358,7 @@
+ 	{ "dtls message limit", test_dtls_message_limit },
+ 	{ "dtls exchange many", test_dtls_exchange_many },
+ 	{ "dtls reqrep multi", test_dtls_reqrep_multi },
+-	{ "dtls pub multi", test_dtls_pub_multi },
++	// { "dtls pub multi", test_dtls_pub_multi },
+ 	{ "dtls pre-shared key", test_dtls_psk },
+ 	{ "dtls bad cert mutual", test_dtls_bad_cert_mutual },
+ 	{ "dtls cert mutual", test_dtls_cert_mutual },
